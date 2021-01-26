@@ -1,0 +1,22 @@
+{% extends 'layout.html' %}
+{% block title %} Flask{{super()}}{% endblock%}
+
+{% block content %}
+    <h1>Index page</h1>
+
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for msg in messages %}
+                <div class="message alert-success">
+                    {{msg}}
+                </div>
+
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+
+    <p> Whatever you want to put in this place...{{name}}</p>
+    <h2> {{string1}} </h2>
+    {{string2|safe}}
+    {# comentario #}
+{% endblock%}

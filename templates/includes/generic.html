@@ -1,0 +1,17 @@
+    <form action="" method="POST">
+
+        <label for="brand"> Brand </label>
+        <input type="text" name="brand">
+
+        <label for="model"> Model </label>
+        <input type="text" name="model">
+
+        <label for="price"> Price </label>
+        <input type="number" step="0.01" name="price">
+
+        <label for="city"> City </label>
+        <input type="text" name="city" {% if article %} value="{{article.4}}" {% endif %}>
+
+        <input type="submit" value="save">
+
+    </form>

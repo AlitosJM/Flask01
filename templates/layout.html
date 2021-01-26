@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+
+    <head>
+        <meta charset="UTF-8">
+        <title> {% block title %}  | JMAT{% endblock %} </title>
+        <link rel="stylesheet" href="{{url_for('static',filename='css/styles.css')}}">
+    </head>
+    <body>
+        <header>
+            <div id="logotipo">
+                <img src="{{url_for('static',filename='img/flask.png')}}"/>
+                <h1> @litos </h1>
+            </div>
+        </header>
+
+        <nav>
+            <ul>
+                <li>
+                    <a href="/"> Start menu </a>
+                </li>
+                <li>
+                    <a href="/article"> Create article </a>
+                </li>
+                <li>
+                    <a href="{{url_for('list_article')}}"> List of articles </a>
+                </li>
+                <li>
+                    <a href="{{url_for('info')}}"> Info </a>
+                </li>
+                <li>
+                    <a href="{{url_for('contact')}}"> Contact </a>
+                </li>
+                <li>
+                    <a href="{{url_for('things')}}"> Things </a>
+                </li>
+            </ul>
+
+        </nav>
+
+        <div class="barra">
+            <span class="esquina-izq"></span>
+            <span class="relleno-barra"></span>
+            <span class="esquina-der"></span>
+        </div>
+
+
+        <div id="content">
+            <div class="box">
+                {% block content %}
+                    <strong> ¡Contenido bloque original!</strong>
+                {% endblock %}
+            </div>
+        </div>
+
+        <footer>
+            Python and Flask &copy; JMAT (^˵◕ω◕˵^) {{now.month}}/{{now.year}}
+        </footer>
+    </body>
+
+</html>
+
+
+
+
+
